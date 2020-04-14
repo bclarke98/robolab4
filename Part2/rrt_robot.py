@@ -62,6 +62,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     global cmap, stopevent
     marked = {}
     mw, mh = cmap.get_size()
+    sx, sy = G_OFFSETX, G_OFFSETY
     iters = 0
     path = []
     while True:
