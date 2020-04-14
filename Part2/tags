@@ -1,0 +1,154 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a	array:obstacles
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a	array:obstacles.0
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.0
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.1
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.2
+0	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.3
+0	maps/emptygrid.json	/^	"start": [50, 35],$/;"	n	array:start
+0	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	a	array:obstacles.1
+0	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.0
+0	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.1
+0	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.2
+0	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.3
+0	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	a	array:obstacles.3
+0	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.0
+0	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.1
+0	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.2
+0	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.3
+0	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles.2
+0	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.0
+0	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.1
+0	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.2
+0	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.3
+1	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a	array:obstacles.0
+1	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.0
+1	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.1
+1	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.2
+1	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	n	array:obstacles.0.3
+1	maps/emptygrid.json	/^	"start": [50, 35],$/;"	n	array:start
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	a	array:obstacles
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	a	array:obstacles.1
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.0
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.1
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.2
+1	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	n	array:obstacles.1.3
+1	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	a	array:obstacles.3
+1	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.0
+1	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.1
+1	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.2
+1	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	n	array:obstacles.3.3
+1	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles.2
+1	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.0
+1	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.1
+1	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.2
+1	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	n	array:obstacles.2.3
+2	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a	array:obstacles.0
+2	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	a	array:obstacles.1
+2	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	a	array:obstacles.3
+2	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles
+2	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles.2
+3	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a	array:obstacles.0
+3	maps/emptygrid.json	/^          [[30, 450], [30, 0], [0, 0], [0, 450]],$/;"	a	array:obstacles.1
+3	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	a	array:obstacles
+3	maps/emptygrid.json	/^          [[650, 450], [650, 0], [620, 0], [620, 450]]]$/;"	a	array:obstacles.3
+3	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles.2
+CozMap	cmap.py	/^class CozMap:$/;"	c
+CozmoPlanning	rrt_robot.py	/^async def CozmoPlanning(robot: cozmo.robot.Robot):$/;"	f
+G_OFFSETX	rrt_robot.py	/^G_OFFSETX = 0$/;"	v
+G_OFFSETY	rrt_robot.py	/^G_OFFSETY = 0$/;"	v
+MAX_NODES	rrt_robot.py	/^MAX_NODES = 20000$/;"	v
+Node	utils.py	/^class Node(object):$/;"	c
+RRT	rrt_robot.py	/^def RRT(cmap, start):$/;"	f
+RRTThread	rrt_robot.py	/^class RRTThread(threading.Thread):$/;"	c
+RobotThread	rrt_robot.py	/^class RobotThread(threading.Thread):$/;"	c
+Visualizer	gui.py	/^class Visualizer():$/;"	c
+__getitem__	utils.py	/^    def __getitem__(self, key):$/;"	m	class:Node
+__init__	cmap.py	/^    def __init__(self, fname, node_generator):$/;"	m	class:CozMap
+__init__	gui.py	/^    def __init__(self, cmap):$/;"	m	class:Visualizer
+__init__	rrt_robot.py	/^    def __init__(self):$/;"	m	class:RRTThread
+__init__	rrt_robot.py	/^    def __init__(self):$/;"	m	class:RobotThread
+__init__	utils.py	/^    def __init__(self, coord, parent=None):$/;"	m	class:Node
+add_goal	cmap.py	/^    def add_goal(self, node):$/;"	m	class:CozMap
+add_node	cmap.py	/^    def add_node(self, node):$/;"	m	class:CozMap
+add_obstacle	cmap.py	/^    def add_obstacle(self, nodes):$/;"	m	class:CozMap
+add_path	cmap.py	/^    def add_path(self, start_node, end_node):$/;"	m	class:CozMap
+angle_between	rrt_robot.py	/^def angle_between(node0, node1):$/;"	f
+clear_goals	cmap.py	/^    def clear_goals(self):$/;"	m	class:CozMap
+clear_node_paths	cmap.py	/^    def clear_node_paths(self):$/;"	m	class:CozMap
+clear_nodes	cmap.py	/^    def clear_nodes(self):$/;"	m	class:CozMap
+clear_obstacles	cmap.py	/^    def clear_obstacles(self):$/;"	m	class:CozMap
+clear_solved	cmap.py	/^    def clear_solved(self):$/;"	m	class:CozMap
+cmap	rrt_robot.py	/^    cmap = CozMap("maps\/emptygrid.json", node_generator)$/;"	v
+detect_cube	rrt_robot.py	/^async def detect_cube(robot, marked, curpose):$/;"	f
+draw_cmap	gui.py	/^    def draw_cmap(self):$/;"	m	class:Visualizer
+draw_color_circle	gui.py	/^    def draw_color_circle(self, coord, color, size=5, bg=False, tags=''):$/;"	m	class:Visualizer
+draw_color_poly	gui.py	/^    def draw_color_poly(self, coords, color, bg=False, tags=''):$/;"	m	class:Visualizer
+draw_color_square	gui.py	/^    def draw_color_square(self, coord, color, size=20, bg=False, tags=''):$/;"	m	class:Visualizer
+draw_edge	gui.py	/^    def draw_edge(self, start, end, color, width=1.5, tags=''):$/;"	m	class:Visualizer
+draw_goals	gui.py	/^    def draw_goals(self):$/;"	m	class:Visualizer
+draw_node_path	gui.py	/^    def draw_node_path(self):$/;"	m	class:Visualizer
+draw_nodes	gui.py	/^    def draw_nodes(self):$/;"	m	class:Visualizer
+draw_obstacles	gui.py	/^    def draw_obstacles(self):$/;"	m	class:Visualizer
+draw_solution	gui.py	/^    def draw_solution(self):$/;"	m	class:Visualizer
+draw_start	gui.py	/^    def draw_start(self):$/;"	m	class:Visualizer
+follow_parents_as_list	rrt_robot.py	/^def follow_parents_as_list(node, l):$/;"	f
+get_dist	utils.py	/^def get_dist(p, q):$/;"	f
+get_goals	cmap.py	/^    def get_goals(self):$/;"	m	class:CozMap
+get_nodes	cmap.py	/^    def get_nodes(self):$/;"	m	class:CozMap
+get_num_nodes	cmap.py	/^    def get_num_nodes(self):$/;"	m	class:CozMap
+get_orientation	utils.py	/^def get_orientation(p, q, r):$/;"	f
+get_random_valid_node	cmap.py	/^    def get_random_valid_node(self):$/;"	m	class:CozMap
+get_size	cmap.py	/^    def get_size(self):$/;"	m	class:CozMap
+get_start	cmap.py	/^    def get_start(self):$/;"	m	class:CozMap
+go_to_node	rrt_robot.py	/^async def go_to_node(robot, node):$/;"	f
+goals	maps/emptygrid.json	/^	"goals": [],$/;"	a
+height	maps/emptygrid.json	/^	"height": 450,$/;"	n
+is_collision_with_obstacles	cmap.py	/^    def is_collision_with_obstacles(self, line_segment):$/;"	m	class:CozMap
+is_inbound	cmap.py	/^    def is_inbound(self, node):$/;"	m	class:CozMap
+is_inside_obstacles	cmap.py	/^    def is_inside_obstacles(self, node):$/;"	m	class:CozMap
+is_intersect	utils.py	/^def is_intersect(p1, q1, p2, q2):$/;"	f
+is_on_segment	utils.py	/^def is_on_segment(p, q, r):$/;"	f
+is_solution_valid	cmap.py	/^    def is_solution_valid(self):$/;"	m	class:CozMap
+is_solved	cmap.py	/^    def is_solved(self):$/;"	m	class:CozMap
+is_zero	utils.py	/^def is_zero(val):$/;"	f
+local_to_global	rrt_robot.py	/^def local_to_global(la, lp, rp):$/;"	f
+node_generator	rrt_robot.py	/^def node_generator(cmap):$/;"	f
+np	utils.py	/^import numpy as np$/;"	I
+obstacles	maps/emptygrid.json	/^	"obstacles": [[[650, 30], [650, 0], [0, 0], [0, 30]],$/;"	a
+p1	utils.py	/^    p1, q1 = Node((-5, -5)), Node((0, 0))$/;"	v
+p1	utils.py	/^    p1, q1 = Node((1, 1)), Node((10, 1))$/;"	v
+p1	utils.py	/^    p1, q1 = Node((10, 0)), Node((0, 10))$/;"	v
+p2	utils.py	/^    p2, q2 = Node((0, 0)), Node((10, 10))$/;"	v
+p2	utils.py	/^    p2, q2 = Node((1, 1)), Node((10, 10))$/;"	v
+p2	utils.py	/^    p2, q2 = Node((1, 2)), Node((10, 2))$/;"	v
+pose_to_node	rrt_robot.py	/^def pose_to_node(pose):$/;"	f
+q1	utils.py	/^    p1, q1 = Node((-5, -5)), Node((0, 0))$/;"	v
+q1	utils.py	/^    p1, q1 = Node((1, 1)), Node((10, 1))$/;"	v
+q1	utils.py	/^    p1, q1 = Node((10, 0)), Node((0, 10))$/;"	v
+q2	utils.py	/^    p2, q2 = Node((0, 0)), Node((10, 10))$/;"	v
+q2	utils.py	/^    p2, q2 = Node((1, 1)), Node((10, 10))$/;"	v
+q2	utils.py	/^    p2, q2 = Node((1, 2)), Node((10, 2))$/;"	v
+reset	cmap.py	/^    def reset(self):$/;"	m	class:CozMap
+robot_pose_as_node	rrt_robot.py	/^def robot_pose_as_node(robot):$/;"	f
+robot_thread	rrt_robot.py	/^    robot_thread = RobotThread()$/;"	v
+run	rrt_robot.py	/^    def run(self):$/;"	m	class:RRTThread
+run	rrt_robot.py	/^    def run(self):$/;"	m	class:RobotThread
+set_start	cmap.py	/^    def set_start(self, node):$/;"	m	class:CozMap
+setup	gui.py	/^    def setup(self):$/;"	m	class:Visualizer
+start	gui.py	/^    def start(self):$/;"	m	class:Visualizer
+start	maps/emptygrid.json	/^	"start": [50, 35],$/;"	a
+step_from_to	rrt_robot.py	/^def step_from_to(node0, node1, limit=75):$/;"	f
+stopevent	rrt_robot.py	/^    stopevent = threading.Event()$/;"	v
+update	gui.py	/^    def update(self, *args):$/;"	m	class:Visualizer
+visualizer	rrt_robot.py	/^    visualizer = Visualizer(cmap)$/;"	v
+width	maps/emptygrid.json	/^	"width": 650,$/;"	n
+x	utils.py	/^    def x(self):$/;"	m	class:Node
+y	utils.py	/^    def y(self):$/;"	m	class:Node
