@@ -48,8 +48,8 @@ def RRT(cmap, start):
         print("Please try again :-(")
 
 
-G_OFFSETX = 0
-G_OFFSETY = 0
+G_OFFSETX = 50
+G_OFFSETY = 35
 
 def follow_parents_as_list(node, l):
     l.append(node)
@@ -62,8 +62,6 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     global cmap, stopevent
     marked = {}
     mw, mh = cmap.get_size()
-    sx, sy = robot.pose.position.x, robot.pose.position.y
-    starting_pos = Node((sx, sy))
     iters = 0
     path = []
     while True:
@@ -73,7 +71,6 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             targ = path.pop()
             await go_to_node(robot, targ)
             continue
-        cmap.set_start(starting_pos)
         goalp, rlcmap = await detect_cube(robot, marked, robot_pose_as_node(robot))
         if rlcmap:
             cmap.reset()

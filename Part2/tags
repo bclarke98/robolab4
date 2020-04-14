@@ -62,8 +62,8 @@
 3	maps/emptygrid.json	/^          [[650, 450], [650, 420], [0, 420], [0, 450]],$/;"	a	array:obstacles.2
 CozMap	cmap.py	/^class CozMap:$/;"	c
 CozmoPlanning	rrt_robot.py	/^async def CozmoPlanning(robot: cozmo.robot.Robot):$/;"	f
-G_OFFSETX	rrt_robot.py	/^G_OFFSETX = 0$/;"	v
-G_OFFSETY	rrt_robot.py	/^G_OFFSETY = 0$/;"	v
+G_OFFSETX	rrt_robot.py	/^G_OFFSETX = 50$/;"	v
+G_OFFSETY	rrt_robot.py	/^G_OFFSETY = 35$/;"	v
 MAX_NODES	rrt_robot.py	/^MAX_NODES = 20000$/;"	v
 Node	utils.py	/^class Node(object):$/;"	c
 RRT	rrt_robot.py	/^def RRT(cmap, start):$/;"	f
