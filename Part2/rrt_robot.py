@@ -19,14 +19,12 @@ def step_from_to(node0, node1, limit=75):
     return Node((node0.x + limit * np.sin(theta), node0.y + limit * np.cos(theta)))
     ############################################################################
 
-
 def node_generator(cmap):
     w,h = cmap.get_size()
     rand_node = Node((random.randint(0, w-1), random.randint(0, h-1)))
     if not cmap.is_inbound(rand_node) or cmap.is_inside_obstacles(rand_node):
         return node_generator(cmap)
     return rand_node
-
 
 def RRT(cmap, start):
     cmap.add_node(start)
@@ -64,7 +62,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     global cmap, stopevent
     marked = {}
     mw, mh = cmap.get_size()
-    sx, sy = 0, 0
+    sx, sy = robot.pose.position.x, robot.pose.position.y
     starting_pos = Node((sx, sy))
     iters = 0
     path = []
@@ -96,7 +94,7 @@ async def go_to_node(robot, node):
     rn = robot_pose_as_node(robot)
     ang = angle_between(rn, node)
     dist = get_dist(rn, node)
-    await robot.drive_straight(dist, cozmo.util.Speed(dist/5)).wait_for_completed()
+    await robot.drive_straight(dist, cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
     await robot.turn_in_place(ang).wait_for_completed()
 
 def pose_to_node(pose):
