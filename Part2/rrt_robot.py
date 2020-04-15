@@ -38,7 +38,7 @@ def RRT(cmap, start):
                 nearest_node = node
                 best_dist = td
         rand_node = step_from_to(nearest_node, rand_node)
-        sleep(0.01)
+        time.sleep(0.01)
         cmap.add_path(nearest_node, rand_node)
         if cmap.is_solved():
             break
@@ -71,6 +71,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
         if len(path) > 0:
             targ = path.pop()
             await go_to_node(robot, targ)
+            cmap.set_start(robot_pose_as_node(robot))
             continue
         goalp, rlcmap = await detect_cube(robot, marked, robot_pose_as_node(robot))
         if rlcmap:
@@ -79,6 +80,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             if goalp is None and len(cmap.get_goals()) == 0:
                 await go_to_node(robot, Node((mw/2 - sx, mh/2 - sy)))
                 await robot.turn_in_place(cozmo.util.Angle(degrees=90))
+                cmap.set_start(robot_pose_as_node(robot))
                 continue
             elif len(cmap.get_goals()) > 0:
                 cmap.set_start(robot_pose_as_node(robot))
@@ -92,8 +94,8 @@ async def go_to_node(robot, node):
     rn = robot_pose_as_node(robot)
     ang = angle_between(rn, node)
     dist = get_dist(rn, node)
-    await robot.drive_straight(dist, cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
-    await robot.turn_in_place(ang).wait_for_completed()
+    await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
+    await robot.turn_in_place(cozmo.robot.Angle(radians=ang)).wait_for_completed()
 
 def pose_to_node(pose):
     return Node((G_OFFSETX + pose.position.x, G_OFFSETY + pose.position.y))
@@ -104,7 +106,7 @@ def robot_pose_as_node(robot):
 def local_to_global(la, lp, rp):
     rcos = np.cos(la)
     rsin = np.sin(la)
-    nx, ny = rp.x * rcos - rp.x * rsin, rp.y * rsin + rp.y * rcos
+    nx, ny = rp.x * rcos + rp.y * -rsin, rp.x * rsin + rp.y * rcos
     return Node((lp.x + nx, lp.y + ny))
 
 async def detect_cube(robot, marked, curpose):
@@ -173,7 +175,7 @@ class RRTThread(threading.Thread):
     def run(self):
         while not stopevent.is_set():
             RRT(cmap, cmap.get_start())
-            sleep(100)
+            time.sleep(100)
             cmap.reset()
         stopevent.set()
 
