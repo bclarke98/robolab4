@@ -112,7 +112,7 @@ def local_to_global(la, lp, rp):
 async def detect_cube(robot, marked, curpose):
     global cmap
 
-    rpad, cpad = 60, 100
+    rpad, cpad = 120, 70
     update_cmap = False
     goalc = None
 
@@ -134,7 +134,7 @@ async def detect_cube(robot, marked, curpose):
             else:
                 cmap.clear_goals()
                 cmap.add_goal(goalp)
-                goalc = objp
+                goalc = goalp
         obst = []
         obst.append(local_to_global(obja, objp, Node((cpad, cpad))))
         obst.append(local_to_global(obja, objp, Node((cpad, -cpad))))
