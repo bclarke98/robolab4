@@ -80,7 +80,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             cmap.reset()
         if not cmap.is_solved():
             if goalp is None and len(cmap.get_goals()) == 0:
-                await go_to_node(robot, Node((mw/2 + sx, mh/2 + sy)))
+                await go_to_node(robot, Node((mw/2, mh/2)))
                 await robot.turn_in_place(cozmo.util.Angle(degrees=90)).wait_for_completed()
                 cmap.set_start(robot_pose_as_node(robot))
                 continue
