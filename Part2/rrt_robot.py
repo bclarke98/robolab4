@@ -79,23 +79,23 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
         if not cmap.is_solved():
             if goalp is None and len(cmap.get_goals()) == 0:
                 await go_to_node(robot, Node((mw/2 + sx, mh/2 + sy)))
-                # await robot.turn_in_place(cozmo.util.Angle(degrees=90))
+                await robot.turn_in_place(cozmo.util.Angle(degrees=90))
                 cmap.set_start(robot_pose_as_node(robot))
                 continue
             elif len(cmap.get_goals()) > 0:
                 cmap.set_start(robot_pose_as_node(robot))
                 RRT(cmap, cmap.get_start())
                 if cmap.is_solved():
-                    # set path to the reversed list so that we can just use pop()
-                    path = follow_parents_as_list(goalp)[::-1]
+                    follow_parents_as_list(goalp, path)
 
 
 async def go_to_node(robot, node):
     rn = robot_pose_as_node(robot)
     ang = angle_between(rn, node)
     dist = get_dist(rn, node)
-    await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
     await robot.turn_in_place(cozmo.util.Angle(radians=ang)).wait_for_completed()
+    await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
+    await robot.turn_in_place(cozmo.util.Angle(radians=-ang)).wait_for_completed()
 
 def pose_to_node(pose):
     return Node((G_OFFSETX + pose.position.x, G_OFFSETY + pose.position.y))
@@ -144,9 +144,6 @@ async def detect_cube(robot, marked, curpose):
         marked[obj.object_id] = obj
         update_cmap = True
     return goalc, update_cmap
-
-
-
 
 ################################################################################
 #                     DO NOT MODIFY CODE BELOW                                 #
