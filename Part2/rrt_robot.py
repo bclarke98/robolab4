@@ -67,6 +67,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     path = []
     TURN_ANG = 0
     TARGET = None
+    CENTERED = False
     await robot.set_head_angle(cozmo.util.degrees(0)).wait_for_completed()
     while True:
         iters += 1
@@ -80,8 +81,10 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             cmap.reset()
         if not cmap.is_solved():
             if goalp is None and len(cmap.get_goals()) == 0:
-                await go_to_node(robot, Node((mw/2, mh/2)))
-                await robot.turn_in_place(cozmo.util.Angle(degrees=90)).wait_for_completed()
+                if not CENTERED:
+                    await go_to_node(robot, Node((mw/2, mh/2)))
+                    CENTERED = True
+                await robot.turn_in_place(cozmo.util.Angle(degrees=30)).wait_for_completed()
                 cmap.set_start(robot_pose_as_node(robot))
                 continue
             elif len(cmap.get_goals()) > 0:
