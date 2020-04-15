@@ -129,7 +129,6 @@ p1	utils.py	/^    p1, q1 = Node((10, 0)), Node((0, 10))$/;"	v
 p2	utils.py	/^    p2, q2 = Node((0, 0)), Node((10, 10))$/;"	v
 p2	utils.py	/^    p2, q2 = Node((1, 1)), Node((10, 10))$/;"	v
 p2	utils.py	/^    p2, q2 = Node((1, 2)), Node((10, 2))$/;"	v
-pose_to_node	rrt_robot.py	/^def pose_to_node(pose):$/;"	f
 q1	utils.py	/^    p1, q1 = Node((-5, -5)), Node((0, 0))$/;"	v
 q1	utils.py	/^    p1, q1 = Node((1, 1)), Node((10, 1))$/;"	v
 q1	utils.py	/^    p1, q1 = Node((10, 0)), Node((0, 10))$/;"	v

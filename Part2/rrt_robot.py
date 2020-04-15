@@ -67,10 +67,13 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     path = []
     TURN_ANG = 0
     TARGET = None
-    await robot.set_head_angle(cozmo.util.Degrees(0)).wait_for_completed()
+    await robot.set_head_angle(cozmo.util.degrees(0)).wait_for_completed()
     while True:
         iters += 1
         goalp, rlcmap = await detect_cube(robot, marked, robot_pose_as_node(robot))
+        if TURN_ANG:
+            await robot.turn_in_place(cozmo.util.Angle(radians=-TURN_ANG)).wait_for_completed()
+            TURN_ANG = 0
         if goalp:
             TARGET = goalp
         if rlcmap:
@@ -78,7 +81,7 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
         if not cmap.is_solved():
             if goalp is None and len(cmap.get_goals()) == 0:
                 await go_to_node(robot, Node((mw/2 + sx, mh/2 + sy)))
-                await robot.turn_in_place(cozmo.util.Angle(degrees=90))
+                await robot.turn_in_place(cozmo.util.Angle(degrees=90)).wait_for_completed()
                 cmap.set_start(robot_pose_as_node(robot))
                 continue
             elif len(cmap.get_goals()) > 0:
@@ -90,7 +93,6 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
         if len(path) > 0:
             targ = path.pop()
             TURN_ANG = await go_to_node(robot, targ)
-            await robot.turn_in_place(cozmo.util.Angle(radians=-TURN_ANG))
             cmap.set_start(robot_pose_as_node(robot))
 
 async def go_to_node(robot, node):
@@ -98,11 +100,8 @@ async def go_to_node(robot, node):
     ang = angle_between(rn, node)
     dist = get_dist(rn, node)
     await robot.turn_in_place(cozmo.util.Angle(radians=ang)).wait_for_completed()
-    await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
+    await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(75)).wait_for_completed()
     return ang
-
-def pose_to_node(pose):
-    return Node((G_OFFSETX + pose.position.x, G_OFFSETY + pose.position.y))
 
 def robot_pose_as_node(robot):
     return Node((G_OFFSETX + robot.pose.position.x, G_OFFSETY + robot.pose.position.y))
