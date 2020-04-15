@@ -10,7 +10,7 @@ from utils import *
 MAX_NODES = 20000
 
 def angle_between(node0, node1):
-    return np.arctan2([node0.y - node1.y], [node0.x - node1.x])
+    return np.arctan2(node1.y - node0.y, node1.x - node0.x)
 
 def step_from_to(node0, node1, limit=75):
     if get_dist(node0, node1) < limit:
@@ -22,8 +22,8 @@ def step_from_to(node0, node1, limit=75):
 def node_generator(cmap):
     w,h = cmap.get_size()
     rand_node = Node((random.randint(0, w-1), random.randint(0, h-1)))
-    if not cmap.is_inbound(rand_node) or cmap.is_inside_obstacles(rand_node):
-        return node_generator(cmap)
+    while not cmap.is_inbound(rand_node) or cmap.is_inside_obstacles(rand_node):
+        rand_node = Node((random.randint(0, w-1), random.randint(0, h-1)))
     return rand_node
 
 def RRT(cmap, start):
