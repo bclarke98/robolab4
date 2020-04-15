@@ -97,6 +97,9 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             targ = path.pop()
             TURN_ANG = await go_to_node(robot, targ)
             cmap.set_start(robot_pose_as_node(robot))
+        elif len(path) == 0:
+            break
+    print('Arrived')
 
 async def go_to_node(robot, node):
     rn = robot_pose_as_node(robot)
