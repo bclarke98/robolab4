@@ -98,7 +98,8 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
             TURN_ANG = await go_to_node(robot, targ)
             cmap.set_start(robot_pose_as_node(robot))
         elif len(path) == 0:
-            break
+            while not robot.world.light_cubes[cozmo.objects.LightCube1Id].is_visible:
+                await robot.turn_in_place(cozmo.util.Angle(degrees=15)).wait_for_completed()
     print('Arrived')
 
 async def go_to_node(robot, node):
