@@ -47,14 +47,14 @@ def RRT(cmap, start):
     else:
         print("Please try again :-(")
 
-
 G_OFFSETX = 50
 G_OFFSETY = 35
 
 def follow_parents_as_list(node, l):
+    if not node:
+        return
     l.append(node)
-    if node.parent:
-        follow_parents_as_list(node.parent, l)
+    follow_parents_as_list(node.parent, l)
 
 async def CozmoPlanning(robot: cozmo.robot.Robot):
     # Allows access to map and stopevent, which can be used to see if the GUI
@@ -65,15 +65,14 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
     sx, sy = G_OFFSETX, G_OFFSETY
     iters = 0
     path = []
+    TURN_ANG = 0
+    TARGET = None
+    await robot.set_head_angle(cozmo.util.Degrees(0)).wait_for_completed()
     while True:
-        print(f'Iteration [{iters}]')
         iters += 1
-        if len(path) > 0:
-            targ = path.pop()
-            await go_to_node(robot, targ)
-            cmap.set_start(robot_pose_as_node(robot))
-            continue
         goalp, rlcmap = await detect_cube(robot, marked, robot_pose_as_node(robot))
+        if goalp:
+            TARGET = goalp
         if rlcmap:
             cmap.reset()
         if not cmap.is_solved():
@@ -86,8 +85,13 @@ async def CozmoPlanning(robot: cozmo.robot.Robot):
                 cmap.set_start(robot_pose_as_node(robot))
                 RRT(cmap, cmap.get_start())
                 if cmap.is_solved():
-                    follow_parents_as_list(goalp, path)
-
+                    path = []
+                    follow_parents_as_list(TARGET, path)
+        if len(path) > 0:
+            targ = path.pop()
+            TURN_ANG = await go_to_node(robot, targ)
+            await robot.turn_in_place(cozmo.util.Angle(radians=-TURN_ANG))
+            cmap.set_start(robot_pose_as_node(robot))
 
 async def go_to_node(robot, node):
     rn = robot_pose_as_node(robot)
@@ -95,7 +99,7 @@ async def go_to_node(robot, node):
     dist = get_dist(rn, node)
     await robot.turn_in_place(cozmo.util.Angle(radians=ang)).wait_for_completed()
     await robot.drive_straight(cozmo.util.Distance(distance_mm=dist), cozmo.util.Speed(min(75, dist/5))).wait_for_completed()
-    await robot.turn_in_place(cozmo.util.Angle(radians=-ang)).wait_for_completed()
+    return ang
 
 def pose_to_node(pose):
     return Node((G_OFFSETX + pose.position.x, G_OFFSETY + pose.position.y))
